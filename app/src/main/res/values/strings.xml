@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">calculator</string>
+
+    <!--My string values-->
+    <string name="button1Text">1</string>
+    <string name="button2Text">2</string>
+    <string name="button3Text">3</string>
+    <string name="button4Text">4</string>
+    <string name="button5Text">5</string>
+    <string name="button6Text">6</string>
+    <string name="button7Text">7</string>
+    <string name="button8Text">8</string>
+    <string name="button9Text">9</string>
+    <string name="button0Text">0</string>
+    <string name="buttonDivText">÷</string>
+    <string name="buttonXText">X</string>
+    <string name="buttonMinusText">-</string>
+    <string name="buttonPlusText">+</string>
+    <string name="buttonClearText">AC</string>
+    <string name="buttonDelText">DEL</string>
+    <string name="buttonEqualsText">=</string>
+    <string name="buttonOpenBracketText">(</string>
+    <string name="buttonCloseBracketText">)</string>
+    <string name="buttonLogText">log [10<sup>x</sup>]</string>
+    <string name="buttonLnText">ln [e<sup>x</sup>]</string>
+    <string name="buttonSinText">sin [sin<sup>-1</sup>]</string>
+    <string name="buttonCosText">cos [cos<sup>-1</sup>]</string>
+    <string name="buttonTanText">tan [tan<sup>-1</sup>]</string>
+    <string name="buttonDotText">.</string>
+    <string name="buttonPowText">x<sup>y</sup> [!]</string>
+
+    <!--Powering calc up-->
+    <string name="power_on_calc_expression_screen_text">         anville95 <sub><small>[inspired by Mandy]</small></sub></string>
+    <string name="power_on_calc_answer_screen_text">booting ----------</string>
+    <string name="power_on_calc_answer_screen_text_off">shutting down </string>
+    <string name="powerButtonTextOn">ON</string>
+    <string name="powerButtonTextOff">OFF</string>
+</resources>

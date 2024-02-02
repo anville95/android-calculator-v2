@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/calculator_background_light"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/textview_top_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <!--expression screen-->
+    <TextView
+        android:id="@+id/expression_screen"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="15px"
+        android:text=""
+        android:fontFamily="@font/digital_font_family_mono"
+        android:background="@drawable/screen_background_off"
+        android:gravity="center_vertical"
+        android:maxLines="3"
+        android:padding="13px"
+        android:scrollbars="vertical"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/textview_split_guideline"
+        app:layout_constraintTop_toTopOf="@id/textview_top_guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/textview_split_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.17" />
+
+    <!--answer screen-->
+    <TextView
+        android:id="@+id/answer_screen"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="15px"
+        android:fontFamily="@font/digital_font_family_mono"
+        android:background="@drawable/screen_background_off"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:padding="13px"
+        android:scrollbars="horizontal"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/textview_bottom_guideline"
+        app:layout_constraintTop_toBottomOf="@id/textview_split_guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/textview_bottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/powerButton"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_marginEnd="13px"
+        android:background="@drawable/power_button_background_off"
+        android:textColor="#0b0700"
+        android:text="@string/powerButtonTextOff"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        android:alpha="1"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_bottom_guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <!--First Button Row-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button7"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/buttons_background_light"
+        android:text="@string/button7Text"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/button4"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/button8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button8"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/buttons_background_light"
+        android:text="@string/button8Text"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/button5"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/button9"
+        app:layout_constraintStart_toEndOf="@id/button7"
+        app:layout_constraintTop_toBottomOf="@id/guideline" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button9"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/buttons_background_light"
+        android:text="@string/button9Text"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/button6"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/buttonDiv"
+        app:layout_constraintStart_toEndOf="@id/button8"
+        app:layout_constraintTop_toBottomOf="@id/guideline" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonDiv"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/opps_buttons_background_light"
+        android:text="@string/buttonDivText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonX"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button9"
+        app:layout_constraintTop_toBottomOf="@id/guideline" />
+
+    <!--Second Button Row-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button4"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/buttons_background_light"
+        android:text="@string/button4Text"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/button5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button7" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button5"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/buttons_background_light"
+        android:text="@string/button5Text"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/button6"
+        app:layout_constraintStart_toEndOf="@id/button4"
+        app:layout_constraintTop_toBottomOf="@id/button8" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button6"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/buttons_background_light"
+        android:text="@string/button6Text"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/buttonX"
+        app:layout_constraintStart_toEndOf="@id/button5"
+        app:layout_constraintTop_toBottomOf="@id/button9" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonX"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/opps_buttons_background_light"
+        android:text="@string/buttonXText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button6"
+        app:layout_constraintTop_toBottomOf="@id/buttonDiv" />
+
+    <!--Third ButtonRow-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button1"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/buttons_background_light"
+        android:text="@string/button1Text"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button2"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/buttons_background_light"
+        android:text="@string/button2Text"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/button3"
+        app:layout_constraintStart_toEndOf="@id/button1"
+        app:layout_constraintTop_toBottomOf="@id/button5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button3"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/buttons_background_light"
+        android:text="@string/button3Text"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/buttonMinus"
+        app:layout_constraintStart_toEndOf="@id/button2"
+        app:layout_constraintTop_toBottomOf="@id/button6" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonMinus"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/opps_buttons_background_light"
+        android:text="@string/buttonMinusText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button3"
+        app:layout_constraintTop_toBottomOf="@id/buttonX" />
+
+    <!--Fourth ButtonRow-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button0"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/buttons_background_light"
+        android:text="@string/button0Text"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/buttonOpenBracket"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonOpenBracket"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/brackets_buttons_background_light"
+        android:text="@string/buttonOpenBracketText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/buttonCloseBracket"
+        app:layout_constraintStart_toEndOf="@id/button0"
+        app:layout_constraintTop_toBottomOf="@id/button2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCloseBracket"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/brackets_buttons_background_light"
+        android:text="@string/buttonCloseBracketText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/buttonPlus"
+        app:layout_constraintStart_toEndOf="@id/buttonOpenBracket"
+        app:layout_constraintTop_toBottomOf="@id/button3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonPlus"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/opps_buttons_background_light"
+        android:text="@string/buttonPlusText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonCloseBracket"
+        app:layout_constraintTop_toBottomOf="@id/buttonMinus" />
+
+    <!--Fifth ButtonRow-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonClear"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/deletion_buttons_background_light"
+        android:text="@string/buttonClearText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        app:layout_constraintDimensionRatio="5:3"
+        app:layout_constraintEnd_toStartOf="@id/buttonDelete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonDelete"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/deletion_buttons_background_light"
+        android:text="@string/buttonDelText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        app:layout_constraintDimensionRatio="5:3"
+        app:layout_constraintEnd_toStartOf="@id/buttonEquals"
+        app:layout_constraintStart_toEndOf="@id/buttonClear"
+        app:layout_constraintTop_toBottomOf="@id/buttonOpenBracket" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonEquals"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/equals_button_background_light"
+        android:text="@string/buttonEqualsText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="5:3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonDelete"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlus" />
+
+    <!--Sixth ButtonRow-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLog"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/log_buttons_background_light"
+        android:text="@string/buttonLogText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/buttonLn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonClear" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLn"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/log_buttons_background_light"
+        android:text="@string/buttonLnText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/buttonDot"
+        app:layout_constraintStart_toEndOf="@id/buttonLog"
+        app:layout_constraintTop_toBottomOf="@id/buttonDelete" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonDot"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/brackets_buttons_background_light"
+        android:text="@string/buttonDotText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toStartOf="@id/buttonPow"
+        app:layout_constraintStart_toEndOf="@id/buttonLn"
+        app:layout_constraintTop_toBottomOf="@id/buttonDelete" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonPow"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/brackets_buttons_background_light"
+        android:text="@string/buttonPowText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        app:layout_constraintDimensionRatio="11:7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonDot"
+        app:layout_constraintTop_toBottomOf="@id/buttonEquals" />
+
+    <!--Seventh ButtonRow-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSin"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/trig_buttons_background_light"
+        android:text="@string/buttonSinText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintEnd_toStartOf="@id/buttonCos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonLog" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCos"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/trig_buttons_background_light"
+        android:text="@string/buttonCosText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintEnd_toStartOf="@id/buttonTan"
+        app:layout_constraintStart_toEndOf="@id/buttonSin"
+        app:layout_constraintTop_toBottomOf="@id/buttonLn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonTan"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_margin="10px"
+        android:background="@drawable/trig_buttons_background_light"
+        android:text="@string/buttonTanText"
+        android:fontFamily="@font/digital_italic"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonCos"
+        app:layout_constraintTop_toBottomOf="@id/buttonDot" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
